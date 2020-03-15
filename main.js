@@ -36,6 +36,7 @@ function main() {
   console.log(isEmpty(SLL));
   console.log(findPrevious(SLL, "Kat"));
   console.log(findLast(SLL));
+  console.log(thirdFromEnd(SLL));
 }
 
 const display = linkedlist => {
@@ -89,6 +90,37 @@ const findLast = linkedlist => {
     currNode = currNode.next;
   }
   return currNode;
+};
+
+const reverseList = linkedlist => {
+  if (!linkedlist.head) {
+    return console.log("list empty");
+  }
+};
+
+const thirdFromEnd = linkedlist => {
+  if (!linkedlist.head) {
+    return console.log("list empty");
+  }
+  let currNode = linkedlist.head;
+  while (currNode !== null) {
+    if (currNode.next.next.next === null) return currNode;
+    currNode = currNode.next;
+  }
+
+  return currNode;
+};
+
+const middleOfAList = linkedlist => {
+  if (!linkedlist.head) {
+    return console.log("list empty");
+  }
+};
+
+const sortingAlist = linkedlist => {
+  if (!linkedlist.head) {
+    return console.log("list empty");
+  }
 };
 
 main();
