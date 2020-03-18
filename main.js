@@ -37,6 +37,7 @@ function main() {
   console.log(findPrevious(SLL, "Kat"));
   console.log(findLast(SLL));
   console.log(thirdFromEnd(SLL));
+  reverseList(SLL);
 }
 
 const display = linkedlist => {
@@ -96,6 +97,21 @@ const reverseList = linkedlist => {
   if (!linkedlist.head) {
     return console.log("list empty");
   }
+  let prev = linkedlist.head;
+  let current = linkedlist.head;
+  let next = current.next;
+
+  while (next != null) {
+    current.next = prev;
+    prev = current;
+    current = next;
+    next = next.next;
+  }
+  current.next = prev;
+  linkedlist.head.next = null;
+  linkedlist.head = current;
+
+  return linkedlist;
 };
 
 const thirdFromEnd = linkedlist => {
@@ -107,7 +123,6 @@ const thirdFromEnd = linkedlist => {
     if (currNode.next.next.next === null) return currNode;
     currNode = currNode.next;
   }
-
   return currNode;
 };
 
@@ -121,6 +136,10 @@ const sortingAlist = linkedlist => {
   if (!linkedlist.head) {
     return console.log("list empty");
   }
+  let previousNode = linkedlist.head;
+  let currNode = linkedlist.head;
+
+  while (linkedlist.head !== null) {}
 };
 
 main();
